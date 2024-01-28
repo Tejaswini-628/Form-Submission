@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: #4C4C4C;
+    margin-left: 25px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #F8F8F8;
+    padding: 15px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 100px;
+    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li div {
+    margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+    <h2>Searched Data:</h2>
+    <ul>
+        {{#each fetchedData}}
+        <li>
+            <div>Name: {{this.name}}</div>
+            <div>Registration Number: {{this.registration_number}}</div>
+            <div>Date: {{this.date}}</div>
+        </li>
+        {{/each}}
+    </ul>
+</body>
+</html>

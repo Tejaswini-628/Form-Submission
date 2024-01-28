@@ -1,0 +1,94 @@
+
+.container {
+   max-width: 400px;
+   margin: 40px auto;
+   padding: 20px;
+   background-color: #fff;
+   border-radius: 5px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+ input[type="text"], input[type="date"], input[type="number"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+ }
+
+ .b1 {
+    background-color: #2E4374;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+ }
+
+ .b1:hover {
+    opacity: 0.8;
+ }
+
+ .list-item {
+    list-style-type: none;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #f2f2f2;
+ }
+
+
+ body {
+   margin: 0;
+}
+
+#navlist {
+   background-color: #2E4374;
+   position: fixed;
+   width: 100%; 
+   height: 80px; 
+}
+  
+.search input[type=text]{
+   width:290px;
+   height:40px;
+   border-radius:25px;
+   border: none;
+   margin-right: 90px;
+   margin-top: 13px;
+}
+      
+.search{
+   float:right;
+   margin:7px;
+}
+      
+.b2 {
+    position: relative; 
+    left: -135px; 
+    top: 3px;
+    height:30px;
+    width:30px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+}
+.b3{
+   position: absolute;
+   top: 8px;
+   position: relative;
+   left:75px;
+   height:45px;
+   color: #f2f2f2;
+   width:45px;
+   margin:none;
+   border-radius: 30%;
+   border: none;
+   margin-top: 10px;
+   background-color:#2E4374 ;
+}
+
+.b3:hover {
+   background-color: white;
+   color: black;
+   opacity: 0.8;
+}

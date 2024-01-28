@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <link rel="stylesheet" href="css/style3.css">
+</head>
+<body>
+ <div class="outer-wrapper">
+    <div class="table-wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Registration Number</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each details}}
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.registration_number}}</td>
+                    <td>{{this.date}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    </div>
+    </div>
+
+ <script>
+    window.addEventListener('scroll', () => {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+            // Fetch more data and append it to the table
+        }
+    });
+ </script>
+</body>
+</html>

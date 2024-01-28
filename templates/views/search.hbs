@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="css/style2.css"> 
+</head>
+<body>
+    <div class="container">
+    <h1>Search</h1>
+    <label class="label1" for="registrationNumber">Registration Number:</label>
+    <input type="text" id="registrationNumber">
+    <button class="search-button" id="search-button">Search</button>
+    <ul id="resultList" ></ul>
+    </div>
+    <script >
+        document.getElementById('search-button').addEventListener('click', () => {
+    const registrationNumber = document.getElementById('registrationNumber').value;
+
+    fetch(`/fetchid/${registrationNumber}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const resultList = document.getElementById('resultList');
+            resultList.innerHTML = '';
+            
+            // Check if data has items and it's an array
+            if (data && Array.isArray(data)) {
+                data.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `Name: ${item.name} <br> Registration Number: ${item.registration_number} <br> Date: ${item.date}`;
+                    resultList.appendChild(listItem);
+                });
+            } else {
+                const listItem = document.createElement('li');
+                listItem.textContent = 'No matching records found.';
+                resultList.appendChild(listItem);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert(`An error occurred while fetching the data. Please try again.\n${error.message}`);
+        });
+});
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
